@@ -20,10 +20,10 @@ var connect =  mysql.createPool({
 server.listen(3000);
 //Twitter Credentials
 var client = new Twitter({
-  consumer_key: 'Y4e0kxIjuEQLX5012tMDvcvn4',
-  consumer_secret: '8wQQXiwgWgao1XhueqOfqVGF35DLtrxDWA6cVo0zEajbMzhP7U',
-  access_token_key: '2458253882-SOq5oIlPGj95oHs91Pgxmq0t7lXwRSpBXtXHNsM',
-  access_token_secret: '9wvQuV0P39dZJ4soUoIdsTgn7dIu0M50PARolULhZYQ2R'
+	consumer_key: 'YOUR_CONSUMER_KEY',
+	consumer_secret: 'YOUR_CONSUMER_SECRET',
+	access_token_key: 'YOUR_ACCESS_TOKEN_KEY',
+	access_token_secret: 'YOUR_ACCESS_TOKEN_SECRET'
 });
 
 //Default Route
