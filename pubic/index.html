@@ -1,6 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Tweetoletics | nodejsera</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Tweets</title>
     <!-- Include Socket.io from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <!-- Include Jquery from CDN -->
@@ -76,34 +80,34 @@
         </div>
       </div>
     </div>
+
+    <script>
+      console.log("loading");
+      //Jquery code starts here
+      $("document").ready(function () {
+        console.log("loaded");
+        //Connecting the socket to host and port
+        var socket = io.connect("http://localhost:3000");
+        $("#sub").click(function () {
+          socket.emit("keyword", { keyword: $("#keyword").val() });
+        });
+
+        socket.on("livetweets", function (data) {
+          console.log(data);
+          var t = data.data;
+          $("#tweets").append(
+            "<b> Keyword : " +
+              t.keyword +
+              " </b> </div> <div class='content'> " +
+              t.user +
+              "</div><div class='content'>" +
+              t.tweet +
+              "</div> <br> <hr>"
+          );
+        });
+        //Event ends
+      });
+      //jquery code ends here
+    </script>
   </body>
-
-  <script>
-    console.log("loading");
-    //Jquery code starts here
-    $("document").ready(function () {
-      console.log("loaded");
-      //Connecting the socket to host and port
-      var socket = io.connect("http://localhost:3000");
-      $("#sub").click(function () {
-        socket.emit("keyword", { keyword: $("#keyword").val() });
-      });
-
-      socket.on("livetweets", function (data) {
-        console.log(data);
-        var t = data.data;
-        $("#tweets").append(
-          "<b> Keyword : " +
-            t.keyword +
-            " </b> </div> <div class='content'> " +
-            t.user +
-            "</div><div class='content'>" +
-            t.tweet +
-            "</div> <br> <hr>"
-        );
-      });
-      //Event ends
-    });
-    //jquery code ends here
-  </script>
 </html>

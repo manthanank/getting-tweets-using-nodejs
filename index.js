@@ -1,6 +1,7 @@
-var express = require('express');
+// var express = require('express');
+const express = require("express");
 var path = require('path'); 
-
+require("dotenv").config()
 var app = express();
 var server = require('http').Server(app);
 var bodyParser = require('body-parser');
@@ -17,13 +18,16 @@ var connect =  mysql.createPool({
 	database: 'my_db'
 });
 
-server.listen(3000);
+// server.listen(3000);
+app.listen(process.env.PORT, () => {
+	console.log(`Server running on port ${process.env.PORT}`)
+  })
 //Twitter Credentials
 var client = new Twitter({
-	consumer_key: 'YOUR_CONSUMER_KEY',
-	consumer_secret: 'YOUR_CONSUMER_SECRET',
-	access_token_key: 'YOUR_ACCESS_TOKEN_KEY',
-	access_token_secret: 'YOUR_ACCESS_TOKEN_SECRET'
+	consumer_key: process.env.API_KEY,
+	consumer_secret: process.env.API_SECRET_KEY,
+	access_token_key: process.env.ACCESS_TOKEN,
+	access_token_secret: process.env.ACCESS_TOKEN_SECRET_KEY
 });
 
 //Default Route
@@ -34,7 +38,7 @@ app.get('/',function(req,res){
 	return res.redirect('/public/index.html');
 });
 
-console.log("Server listening at : 3000");
+// console.log("Server listening at : 3000");
 app.use('/public', express.static(__dirname + '/public'));
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
