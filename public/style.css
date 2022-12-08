@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather');
+/**
+	font-family: 'Inconsolata', monospace;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Merriweather', serif;	
+**/
+main{
+	margin-top: 100px;
+}
+.container{
+    padding: 50px;
+	background-color: #888;
+	border-radius: 20px;
+}
+
+h1{
+	text-align: center;
+}
+.row{
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.col{
+	padding: 10px;
+}
+input{
+	font-family: 'Josefin Slab', serif;
+	font-size: 30px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #222222;
+}
+button {
+	font-family: 'Merriweather', serif;	
+	font-size: 40px;
+    background-color: rgb(189, 174, 174);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 15px;
+}
+button:hover{
+	background-color: rgb(52, 43, 43);
+	color: aliceblue;
+}
+#tweets{
+	background-color: #888;
+	padding: 20px;
+    margin-bottom: 20px;
+	margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid #222222;
+    width: 50%;
+    margin-bottom: 20px;
+}
