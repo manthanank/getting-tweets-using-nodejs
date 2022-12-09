@@ -20,10 +20,10 @@ var connect = mysql.createPool({
 server.listen(3000);
 //Twitter Credentials
 var client = new Twitter({
-  consumer_key: "YOUR_CONSUMER_KEY",
-  consumer_secret: "YOUR_CONSUMER_SECRET",
-  access_token_key: "YOUR_ACCESS_TOKEN_KEY",
-  access_token_secret: "YOUR_ACCESS_TOKEN_SECRET",
+  consumer_key: process.env.API_KEY,
+  consumer_secret: process.env.API_SECRET_KEY,
+  access_token_key: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET_KEY,
 });
 
 //Default Route
