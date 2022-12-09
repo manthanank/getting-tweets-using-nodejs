@@ -1,6 +1,6 @@
 var express = require("express");
 var path = require("path");
-
+require('dotenv').config()
 var app = express();
 var server = require("http").Server(app);
 var bodyParser = require("body-parser");
